@@ -17,6 +17,3 @@ cd mediavibe
 npm install
 npm run tauri dev
 ```
-
-[]: # Language: markdown
-[]: # Path: README.md
