@@ -2,7 +2,7 @@
   <a href="#">
   </a>
   <p align="center">
-   <img width="300" height="150" src="https://raw.githubusercontent.com/KunalKatiyar/mediavibe/master/src/static/images/logo.png" alt="Logo">
+   <img width="400" height="150" src="https://raw.githubusercontent.com/KunalKatiyar/mediavibe/master/src/static/images/logo.png" alt="Logo">
   </p>
   <h1 align="center"><b>MediaVibe</b></h1>
   <p align="center">
