@@ -12,7 +12,17 @@
   },
   "tauri": {
     "allowlist": {
-      "all": true
+      "all": true,
+      "dialog": {
+        "all": true, 
+        "open": true, 
+        "save": true 
+      },
+      "protocol": {
+        "all": true,
+        "asset": true,
+        "assetScope": ["**"]
+      }
     },
     "bundle": {
       "active": true,
@@ -48,7 +58,7 @@
       }
     },
     "security": {
-      "csp": null
+      "csp": "default-src 'self'; img-src 'self' asset: https://asset.localhost; media-src 'self' asset: https://asset.localhost"
     },
     "updater": {
       "active": false
