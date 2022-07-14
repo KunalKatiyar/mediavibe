@@ -1,7 +1,6 @@
-<script lang="ts">
+<script>
   export let opend = false;
   import { open } from "@tauri-apps/api/dialog";
-  import { createEventDispatcher } from "svelte";
   import { convertFileSrc } from "@tauri-apps/api/tauri";
   import {ItemsStore} from "./store";
   console.log(ItemsStore[0])
@@ -15,8 +14,8 @@
     if (Array.isArray(selected)) {
       // user selected multiple files
       const assetUrl = convertFileSrc(selected[0]);
-      $ItemsStore[0].selected = assetUrl;
-      console.log($ItemsStore[0].selected)
+      ItemsStore.update(()=> assetUrl);
+      console.log($ItemsStore)
     } else if (selected === null) {
       // user cancelled the selection
       console.log("ok2");

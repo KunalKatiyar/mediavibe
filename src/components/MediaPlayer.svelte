@@ -1,12 +1,15 @@
 <script lang="ts">
-  import {ItemsStore} from "./store";
-  console.log(ItemsStore[0])
+  import { ItemsStore } from "./store";
+  console.log(ItemsStore[0]);
   const poster = "https://www.server.com/poster.jpg";
-  let source = $ItemsStore[0].selected;
+  let source: any;
+  ItemsStore.subscribe((value) => {
+    source = value;
+  });
 </script>
 
 <vm-player autoplay muted>
-  <vm-video poster={poster} cross-origin>
+  <vm-video {poster} cross-origin>
     <!-- Why `data-src`? Lazy loading. You can always use `src` if you don't need it. -->
     <source data-src={source} type="video/mp4" />
   </vm-video>
