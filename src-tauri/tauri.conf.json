@@ -66,7 +66,7 @@
     "windows": [
       {
         "fullscreen": false,
-        "height": 600,
+        "height": 535,
         "resizable": true,
         "title": "MediaVibe",
         "width": 800
