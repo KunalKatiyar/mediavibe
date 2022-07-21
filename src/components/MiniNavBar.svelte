@@ -13,7 +13,7 @@
 
   async function SearchTime() {
     TitleStore.update(() => searchTerm);
-	await selectYoutube();
+    await selectYoutube();
   }
 
   async function selectYoutube() {
@@ -24,19 +24,18 @@
       maxResults: 1,
       q: searchTerm,
       type: "video",
-    }
-    let url = new URL(
-      "https://www.googleapis.com/youtube/v3/search");
-    for (let k in data){
+    };
+    let url = new URL("https://www.googleapis.com/youtube/v3/search");
+    for (let k in data) {
       url.searchParams.append(k, data[k]);
     }
     let response = await fetch(url);
-    
+
     let obj = await response.json();
     console.log(obj.items[0].id.videoId);
     TypeStore.update(() => "file");
-	TypeStore.update(() => "youtube");
-    LinkStore.update(()=> obj.items[0].id.videoId);
+    TypeStore.update(() => "youtube");
+    LinkStore.update(() => obj.items[0].id.videoId);
   }
 </script>
 
@@ -46,44 +45,44 @@
   <nav class="flex">
     <Hamburger bind:opend={sidebar} />
     <Logo />
+    {#if type == "youtube"}
+      <div class="flex">
+        <div id="search-input-cont">
+          <input
+            type="text"
+            id="search-field"
+            placeholder="Enter Youtube Search"
+            autocomplete="off"
+            bind:value={searchTerm}
+            on:input
+          />
+        </div>
+        <div>
+          <button
+            on:click={() => {
+              SearchTime();
+            }}>Search</button
+          >
+        </div>
+      </div>
+    {/if}
   </nav>
-  {#if type == "youtube"}
-    <div class="flex">
-      <div id="search-input-cont">
-        <input
-          type="text"
-          id="search-field"
-          placeholder="Enter Youtube Search Term"
-          autocomplete="off"
-          bind:value={searchTerm}
-          on:input
-        />
-      </div>
-      <div>
-        <button
-          on:click={() => {
-            SearchTime();
-          }}
-        >Search</button>
-      </div>
-    </div>
-  {/if}
+
   <Menu />
 </header>
 
 <style>
   #search-input-cont {
-    width: 40%;
+    width: 100%;
     display: flex;
     align-items: center;
-    margin: 0 0 0 10px;
   }
 
   #search-field {
     width: 100%;
-    font-size: 1.3rem;
+    font-size: 0.8rem;
     border: 1px solid gray;
-    border-radius: 5px;
+    border-radius: 4px;
     padding: 8px;
     margin: 0 10px 0;
   }
