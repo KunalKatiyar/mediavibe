@@ -6,4 +6,4 @@ export const TypeStore = writable("file")
 
 export const LinkStore = writable("DyTCOwB0DVw");
 
-export const TitleStore = writable("Star Guardian Theme");
+export const TitleStore = writable("Star Guardian Burning Bright Theme");

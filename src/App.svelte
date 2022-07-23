@@ -21,14 +21,17 @@
   });
   $: youtubelink="";
   LinkStore.subscribe((value) => {
+    
     youtubelink = value;
+    console.log("youtube link " + youtubelink);
   });
   // LinkStore.subscribe((value) => {
   //   console.log("NEW VALUE"+ value);
   //   youtubelink = value;
   // });
   // 2. Can't be bothered? Load them all in, may bloat your final bundle size a little.
-  defineCustomElements();
+  $: newyoutubelink = youtubelink;
+  
 </script>
 
 <main>
@@ -37,7 +40,9 @@
     <MediaPlayer />
   {:else}
     <Player controls>
-      <Youtube videoId={youtubelink} />
+      {#key youtubelink}
+        <Youtube videoId={youtubelink} />
+      {/key}
     </Player>
   {/if}
 </main>

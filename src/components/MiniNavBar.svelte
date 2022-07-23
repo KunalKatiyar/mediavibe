@@ -2,6 +2,7 @@
   import Logo from "./Logo.svelte";
   import Hamburger from "./Hamburger.svelte";
   import Menu from "./Menu.svelte";
+  import Button from '@smui/button';
   import { TypeStore, TitleStore, LinkStore } from "./store";
   export let sidebar = false;
   export let searchTerm;
@@ -58,10 +59,11 @@
           />
         </div>
         <div>
-          <button
+          <Button
+          style="vertical-align: middle;"
             on:click={() => {
               SearchTime();
-            }}>Search</button
+            }}>Search</Button
           >
         </div>
       </div>
