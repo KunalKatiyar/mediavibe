@@ -29,7 +29,7 @@
 
 # MediaVibe
 
-<video src='./src/static/MediaVibe.mp4' width=1080></video>
+https://github.com/KunalKatiyar/mediavibe/blob/master/src/static/MediaVibe.mp4
 
 A media player that aims to play all supported file types from the desktop as well as from the web.
 
