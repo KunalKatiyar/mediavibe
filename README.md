@@ -29,6 +29,8 @@
 
 # MediaVibe
 
+<video src='https://www.veed.io/view/2b5cba22-5129-4d95-bbb8-6c58bd7f76be?sharingWidget=true' width=180></video>
+
 A media player that aims to play all supported file types from the desktop as well as from the web.
 
 ## Stack

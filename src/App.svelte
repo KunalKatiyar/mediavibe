@@ -30,7 +30,6 @@
   //   youtubelink = value;
   // });
   // 2. Can't be bothered? Load them all in, may bloat your final bundle size a little.
-  $: newyoutubelink = youtubelink;
   
 </script>
 

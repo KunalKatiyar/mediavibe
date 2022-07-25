@@ -1,5 +1,5 @@
 <script>
-  export let opend = false;
+  export const opend = false;
   import { open } from "@tauri-apps/api/dialog";
   import { convertFileSrc } from "@tauri-apps/api/tauri";
   import { ItemsStore, LinkStore, TypeStore, TitleStore } from "./store";
