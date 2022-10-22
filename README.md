@@ -49,3 +49,7 @@ cd mediavibe
 npm install
 npm run tauri dev
 ```
+
+## To Contribute
+
+Check out the [contribution guide](https://github.com/KunalKatiyar/mediavibe/blob/master/Contributing.md) for more information.
