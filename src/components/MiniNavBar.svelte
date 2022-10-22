@@ -33,7 +33,6 @@
     let response = await fetch(url);
 
     let obj = await response.json();
-    console.log(obj.items[0].id.videoId);
     TypeStore.update(() => "file");
     TypeStore.update(() => "youtube");
     LinkStore.update(() => obj.items[0].id.videoId);

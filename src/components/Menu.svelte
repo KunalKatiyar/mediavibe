@@ -3,26 +3,20 @@
   import { open } from "@tauri-apps/api/dialog";
   import { convertFileSrc } from "@tauri-apps/api/tauri";
   import { ItemsStore, LinkStore, TypeStore, TitleStore } from "./store";
-  console.log(ItemsStore[0]);
 
-  // Open a selection dialog for image files
   async function selectTime() {
     const selected = await open({
       multiple: true,
     });
     console.log("ok");
     if (Array.isArray(selected)) {
-      // user selected multiple files
       const assetUrl = convertFileSrc(selected[0]);
       ItemsStore.update(() => assetUrl);
       TypeStore.update(() => "file");
-      console.log($ItemsStore);
     } else if (selected === null) {
-      // user cancelled the selection
       console.log("ok2");
     } else {
       console.log(selected);
-      // user selected a single file
     }
   }
 
