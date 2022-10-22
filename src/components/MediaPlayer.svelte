@@ -10,12 +10,7 @@
 
 <vm-player autoplay muted>
   <vm-video {poster} cross-origin>
-    <!-- Why `data-src`? Lazy loading. You can always use `src` if you don't need it. -->
-
     <source data-src={source} type="" />
-    <!-- <Youtube videoId="DyTCOwB0DVw" /> -->
   </vm-video>
-
-  <!-- Loads the default Vime UI. -->
   <vm-default-ui />
 </vm-player>
